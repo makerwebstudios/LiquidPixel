@@ -1,4 +1,13 @@
 .DS_Store
 *.tmp
 tapgenie/
-tapgenie/
+
+# Local-only working files (per Rex GitHub policy — don't push internal deliverables)
+.git.broken-backup/
+deliverables/
+audits/
+*.pdf
+*.csv
+*.docx
+*.xlsx
+!assets/**/*.pdf
