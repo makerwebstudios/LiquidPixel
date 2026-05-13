@@ -6,14 +6,23 @@
     <title>Virtual Tours | Liquid Pixel</title>
 
     <meta name="title" content="Virtual Tours | Liquid Pixel" />
-    <meta name="description" content="Explore our portfolio of immersive 360-degree virtual tours for hospitality, entertainment, and corporate venues across New York City and Austin, Texas." />
+    <meta name="description" content="Explore our portfolio of immersive 360-degree virtual tours for hospitality, healthcare, retail, and corporate venues across NYC, Austin, Las Vegas, and the Rio Grande Valley." />
     <meta name="author" content="Liquid Pixel" />
     <link rel="canonical" href="https://www.liquidpixelagency.com/virtualtours" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWXNT20QLC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KWXNT20QLC');
+    </script>
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.liquidpixelagency.com/virtualtours" />
     <meta property="og:title" content="Virtual Tours | Liquid Pixel" />
-    <meta property="og:description" content="Immersive 360-degree virtual tours for hospitality, entertainment, and corporate venues." />
+    <meta property="og:description" content="Immersive 360-degree virtual tours for hospitality, entertainment, healthcare, and corporate venues." />
     <meta property="og:image" content="https://www.liquidpixelagency.com/assets/logos/og-image.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +30,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Logo-tile variant for virtual tour gallery */
+      .tour-card-logo {
+        height: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0f1729 0%, #1a2a4a 100%);
+        padding: 2rem;
+      }
+      .tour-card-logo img {
+        max-width: 75%;
+        max-height: 75%;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+      }
+      .tour-card-logo--light {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      }
+      .tour-card-logo--cyan {
+        background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
+      }
+      .tour-card-logo--purple {
+        background: linear-gradient(135deg, #6B21A8 0%, #C850C0 100%);
+      }
+      .tour-card-logo--orange {
+        background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+      }
+      .tour-meta {
+        display: inline-block;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light-muted);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .tour-card-actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .tour-card-actions .btn {
+        font-size: 0.85rem;
+        padding: 0.55rem 1rem;
+      }
+    </style>
 
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -31,15 +88,16 @@
     <nav class="navbar scrolled">
       <div class="container nav-content">
         <a href="index.html">
-          <img src="assets/logos/brand/liquidpixel.jpeg" alt="Liquid Pixel" style="height: 80px; display: block; border-radius: 8px;" />
+          <img src="assets/logos/brand/liquidpixel.png?v=2" alt="Liquid Pixel" style="height: 100px; display: block;" />
         </a>
         <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
         <ul class="nav-links" style="margin-bottom: 0">
           <li><a href="index.html#services">Services</a></li>
+          <li><a href="virtualtours.html">Virtual Tours</a></li>
           <li><a href="index.html#case-studies">Work</a></li>
           <li><a href="index.html#pricing">Pricing</a></li>
           <li>
-            <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;">
+            <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
               Book A Call
             </a>
           </li>
@@ -54,7 +112,7 @@
           <div class="hero-label">Portfolio</div>
           <h1 class="main-title slide-up">Virtual Tours</h1>
           <p class="hero-desc fade-in-delay">
-            Immersive 360-degree experiences that let your audience explore your space from anywhere in the world. From boutique restaurants to multi-level nightclubs, every tour is built to drive bookings and reduce site visit reliance.
+            Immersive 360-degree experiences that let your audience explore your space from anywhere in the world. From boutique restaurants to multi-level nightclubs, healthcare facilities to retail showrooms — every tour is built to drive bookings, win trust, and reduce site-visit reliance.
           </p>
         </div>
       </header>
@@ -69,59 +127,262 @@
           </div>
 
           <div class="tour-grid">
+
+            <!-- TAO Group Hospitality -->
             <article class="tour-card">
-              <div class="tour-card-image modern-gradient-1"></div>
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/tao.avif" alt="TAO Group Hospitality" />
+              </div>
               <div class="tour-card-body">
-                <h3>Marquee New York</h3>
-                <p>Multi-level nightclub tour with 45 custom hotspots for VIP table layouts, A/V capabilities, and capacity details. Built for TAO Group Hospitality.</p>
-                <a href="taogrouphospitality.html" class="btn btn-outline">View Case Study</a>
+                <span class="tour-meta">Hospitality &middot; 28 Venues</span>
+                <h3>TAO Group Hospitality</h3>
+                <p>Multi-venue 360 portfolio across New York, Las Vegas, and Chicago — Beauty &amp; Essex, Hakkasan, Wet Republic, Cathédrale, and more. Hotspots for VIP tables, A/V, capacity, and reservations.</p>
+                <div class="tour-card-actions">
+                  <a href="taogrouphospitality.html" class="btn btn-primary">View All 28 Venues</a>
+                </div>
               </div>
             </article>
 
+            <!-- 50 Eggs Hospitality -->
             <article class="tour-card">
-              <div class="tour-card-image modern-gradient-2"></div>
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/50eggs.avif" alt="50 Eggs Hospitality" />
+              </div>
               <div class="tour-card-body">
-                <h3>Chicago Cut Steakhouse</h3>
-                <p>Private dining rooms captured in high-definition 360 with embedded menus integrated into the event booking platform. Built for 50 Eggs Hospitality.</p>
-                <a href="50eggshospitality.html" class="btn btn-outline">View Case Study</a>
+                <span class="tour-meta">Hospitality &middot; 3 Venues &middot; Las Vegas</span>
+                <h3>50 Eggs Hospitality</h3>
+                <p>Chica, Wakuda, and Yardbird Southern Table &amp; Bar — full Las Vegas portfolio with embedded menus and reservation hotspots.</p>
+                <div class="tour-card-actions">
+                  <a href="50eggshospitality.html" class="btn btn-primary">View All 3 Venues</a>
+                </div>
               </div>
             </article>
 
+            <!-- NeueHouse Madison Square -->
             <article class="tour-card">
-              <div class="tour-card-image modern-gradient-3"></div>
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/neueHaus.avif" alt="NEUEHOUSE Madison Square" />
+              </div>
               <div class="tour-card-body">
-                <h3>Yardbird Southern Table & Bar</h3>
-                <p>Full restaurant walkthrough showcasing the dining experience, bar area, and private event spaces with interactive reservation hotspots.</p>
-                <a href="50eggshospitality.html" class="btn btn-outline">View Case Study</a>
+                <span class="tour-meta">Members Club &middot; New York City</span>
+                <h3>NEUEHOUSE Madison Square</h3>
+                <p>Premium co-working and cultural venue captured across multiple floors with hotspots for membership inquiries and event bookings.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/NeueHouseMadisonSquare/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
               </div>
             </article>
 
+            <!-- The Pershing -->
             <article class="tour-card">
-              <div class="tour-card-image modern-gradient-1"></div>
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/pershing.avif" alt="The Pershing" />
+              </div>
               <div class="tour-card-body">
-                <h3>NEUEHOUSE</h3>
-                <p>Premium co-working and cultural venue captured across multiple floors with hotspot integrations for membership inquiries and event bookings.</p>
-                <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;" class="btn btn-outline">Learn More</a>
+                <span class="tour-meta">Members Club &middot; Waco, Texas</span>
+                <h3>The Pershing</h3>
+                <p>Exclusive membership club captured floor-by-floor with interactive hotspots driving membership inquiries and private event bookings.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/ThePershing/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
               </div>
             </article>
 
+            <!-- Beauty & Essex Las Vegas -->
             <article class="tour-card">
-              <div class="tour-card-image modern-gradient-2"></div>
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/tao_venues/tao_beauty&essex.avif" alt="Beauty &amp; Essex Las Vegas" />
+              </div>
               <div class="tour-card-body">
+                <span class="tour-meta">Hospitality &middot; Las Vegas</span>
+                <h3>Beauty &amp; Essex Las Vegas</h3>
+                <p>TAO Group's Las Vegas flagship captured in 360 with hotspots for VIP table layouts, bottle service, and reservations.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/BGGlasvegas/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Max Pawn Las Vegas -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/maxpawnluxury.avif" alt="Max Pawn Luxury" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Retail &middot; Las Vegas</span>
+                <h3>Max Pawn</h3>
+                <p>Luxury pawn showroom tour with interactive product hotspots, letting customers explore the collection from anywhere.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/MaxPawn/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- EZ Pawn Queens Plaza -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/ezpawn.avif" alt="EZ Pawn Queens Plaza" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Retail &middot; Queens, NYC</span>
+                <h3>EZ Pawn — Queens Plaza South</h3>
+                <p>Storefront and showroom virtual tour built to drive walk-ins and online inquiries from the NYC neighborhood market.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/EZPAWNqueensplazasouth/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Common Ground Bar NYC -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/commongroundnyc.avif" alt="Common Ground Bar NYC" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Bar &middot; New York City</span>
+                <h3>Common Ground Bar</h3>
+                <p>Neighborhood bar captured in immersive 360, complete with menu hotspots and event-space booking flows.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/CommonGroundBarNYC/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Pink's Cantina -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/pinks.avif" alt="Pink's Cantina" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Restaurant &middot; Edinburg, Texas</span>
+                <h3>Pink's Cantina</h3>
+                <p>Latin-inspired restaurant captured in 360 with embedded menu hotspots and event booking integration.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/pinkscantinaEV/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- University Draft House Town Lake -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/universitydrafthouse.avif" alt="University Draft House Town Lake" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Sports Bar &middot; Austin, Texas</span>
+                <h3>University Draft House — Town Lake</h3>
+                <p>Multi-room sports bar walkthrough with menu hotspots, big-screen layouts, and private event booking integration.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/universitydrafthousetownlake/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Carmel Sports Club -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/carmelsportsclub.avif" alt="Carmel Sports Club" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Fitness &middot; Indiana</span>
+                <h3>Carmel Sports Club</h3>
+                <p>Full-facility virtual walkthrough designed to convert prospective members with a no-pressure preview of the space.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/carmelsportsclubtrick/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Driscoll Children's Hospital -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/Driscoll_web.webp" alt="Driscoll Children's Hospital" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Healthcare &middot; Corpus Christi, Texas</span>
                 <h3>Driscoll Children's Hospital</h3>
-                <p>Healthcare facility tour designed to ease patient and family anxiety by providing a virtual preview of treatment areas, waiting rooms, and amenities.</p>
-                <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;" class="btn btn-outline">Learn More</a>
+                <p>Pediatric healthcare facility tour built to ease patient and family anxiety with a virtual preview of treatment areas and amenities.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/DriscollChildrensHospitalCorpusChristi/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
               </div>
             </article>
 
+            <!-- Dr. Amel Youssef -->
             <article class="tour-card">
-              <div class="tour-card-image modern-gradient-3"></div>
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/amelyouseff.avif" alt="Dr. Amel Youssef" />
+              </div>
               <div class="tour-card-body">
-                <h3>Wonderland Dreams</h3>
-                <p>Interactive art exhibit captured in high-resolution 360-degree panoramas. Visitors explore the installation from any device, anywhere.</p>
-                <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;" class="btn btn-outline">Learn More</a>
+                <span class="tour-meta">Medical Practice &middot; New York City</span>
+                <h3>Dr. Amel Youssef</h3>
+                <p>Medical practice virtual tour delivering a calm, professional first impression for new and returning patients.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/DrAmelYoussef/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
               </div>
             </article>
+
+            <!-- Sea Turtle Inc. -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/seaturtleinc.webp" alt="Sea Turtle Inc." />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Non-Profit &middot; South Padre Island, Texas</span>
+                <h3>Sea Turtle Inc.</h3>
+                <p>South Padre Island's premier sea turtle rescue and conservation center captured in immersive 360.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/SeaTurtleInc/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- McAllen Meeting Planner -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/mcallen.avif" alt="Visit McAllen" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Tourism &middot; McAllen, Texas</span>
+                <h3>McAllen Meeting Planner</h3>
+                <p>Interactive virtual tour of McAllen's premier event venues and meeting spaces built for planners and corporate organizers.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/McAllensMeetingPlannerVirtualTour/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- City of Pharr The Grid -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/pharr.avif" alt="City of Pharr — The Grid" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Civic &middot; Pharr, Texas</span>
+                <h3>The Grid — City of Pharr</h3>
+                <p>Municipal innovation hub captured in 360 to showcase coworking, event, and collaboration spaces to entrepreneurs and visitors.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/CityofPharrTheGrid/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Haitian Paintings -->
+            <article class="tour-card">
+              <div class="tour-card-logo tour-card-logo--light">
+                <img src="assets/logos/clients/haitianpainting.avif" alt="Haitian Paintings" />
+              </div>
+              <div class="tour-card-body">
+                <span class="tour-meta">Art Gallery &middot; New York City</span>
+                <h3>Haitian Paintings</h3>
+                <p>Fine art gallery captured in high-resolution 360 so collectors can browse and inquire on works from anywhere in the world.</p>
+                <div class="tour-card-actions">
+                  <a href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/HaitianPaintings/index.htm" target="_blank" rel="noopener" class="btn btn-primary">Launch Tour</a>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
@@ -132,7 +393,7 @@
           <div class="about-content text-center">
             <h2 class="section-title">Ready to Give Your Space a Digital Twin?</h2>
             <p class="section-subtitle" style="margin: 0 auto 2rem;">Every tour starts with a free strategy call. We'll assess your space, discuss your goals, and deliver a custom quote within 24 hours.</p>
-            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;" class="btn btn-primary lg">
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;" class="btn btn-primary lg">
               Book a Free Strategy Call
             </a>
           </div>

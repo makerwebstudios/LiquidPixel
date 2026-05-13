@@ -3,24 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>50 Eggs Hospitality | Liquid Pixel</title>
+    <title>50 Eggs Hospitality Virtual Tours | Liquid Pixel</title>
 
-    <meta name="title" content="50 Eggs Hospitality | Liquid Pixel" />
-    <meta name="description" content="See how Liquid Pixel created immersive virtual tours for 50 Eggs Hospitality venues including Chicago Cut and Yardbird, driving 2.5x time on page and 18% more private bookings." />
-    <meta name="author" content="Liquid Pixel" />
+    <meta name="title" content="50 Eggs Hospitality Virtual Tours | Liquid Pixel" />
+    <meta name="description" content="Immersive 360-degree virtual tours for 50 Eggs Hospitality venues — Chica, Wakuda, and Yardbird Southern Table &amp; Bar in Las Vegas." />
     <link rel="canonical" href="https://www.liquidpixelagency.com/50eggshospitality" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWXNT20QLC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KWXNT20QLC');
+    </script>
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.liquidpixelagency.com/50eggshospitality" />
-    <meta property="og:title" content="50 Eggs Hospitality | Liquid Pixel" />
-    <meta property="og:description" content="Virtual tours for 50 Eggs Hospitality. 2.5x time on page, +18% private dining bookings." />
-    <meta property="og:image" content="https://www.liquidpixelagency.com/assets/logos/og-image.png" />
+    <meta property="og:title" content="50 Eggs Hospitality Virtual Tours | Liquid Pixel" />
+    <meta property="og:description" content="360-degree virtual tours for Chica, Wakuda, and Yardbird — the 50 Eggs Hospitality Las Vegas portfolio." />
+    <meta property="og:image" content="https://www.liquidpixelagency.com/assets/logos/clients/50eggs.avif" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .venue-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      @media (min-width: 640px) { .venue-grid { grid-template-columns: repeat(3, 1fr); } }
+
+      .venue-tile {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s var(--ease);
+      }
+      .venue-tile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 180, 216, 0.4);
+      }
+      .venue-tile-logo {
+        aspect-ratio: 1 / 1;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .venue-tile-logo img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+      }
+      .venue-tile-label {
+        padding: 1.1rem 1.25rem;
+        text-align: center;
+        border-top: 1px solid var(--border);
+      }
+      .venue-tile-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 0.25rem 0;
+        line-height: 1.25;
+      }
+      .venue-tile-meta {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-light-muted);
+        font-weight: 600;
+      }
+    </style>
 
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -31,15 +98,16 @@
     <nav class="navbar scrolled">
       <div class="container nav-content">
         <a href="index.html">
-          <img src="assets/logos/brand/liquidpixel.jpeg" alt="Liquid Pixel" style="height: 80px; display: block; border-radius: 8px;" />
+          <img src="assets/logos/brand/liquidpixel.png" alt="Liquid Pixel" style="height: 100px; display: block;" />
         </a>
         <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
         <ul class="nav-links" style="margin-bottom: 0">
           <li><a href="index.html#services">Services</a></li>
+          <li><a href="virtualtours.html">Virtual Tours</a></li>
           <li><a href="index.html#case-studies">Work</a></li>
           <li><a href="index.html#pricing">Pricing</a></li>
           <li>
-            <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;">
+            <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
               Book A Call
             </a>
           </li>
@@ -51,130 +119,61 @@
       <header class="hero hero-subpage" id="home">
         <div class="container hero-content" style="max-width: 900px;">
           <a href="virtualtours.html" class="back-link">&larr; Back to Virtual Tours</a>
-          <div class="hero-label">Case Study</div>
-          <h1 class="main-title slide-up">50 Eggs Hospitality</h1>
-          <p class="hero-desc fade-in-delay" style="max-width: 700px;">
-            How we helped 50 Eggs Hospitality increase private dining bookings by 18% and achieve 2.5x longer page engagement with immersive virtual tours of their flagship restaurants.
+          <div class="hero-label">50 Eggs Hospitality</div>
+          <h1 class="main-title slide-up">Three Las Vegas Icons.</h1>
+          <p class="hero-desc fade-in-delay">
+            Immersive 360-degree virtual tours for the 50 Eggs Hospitality Las Vegas portfolio — Chica, Wakuda, and Yardbird Southern Table &amp; Bar. Each tour is built to drive private dining bookings, showcase event spaces, and turn website visitors into reservations.
           </p>
         </div>
       </header>
 
-      <!-- Client Overview -->
+      <!-- Venue Grid -->
       <section style="background: var(--bg-deep); border-top: 1px solid var(--border);">
         <div class="container">
           <div class="section-header">
-            <span class="section-label">The Client</span>
-            <h2 class="section-title">About 50 Eggs Hospitality</h2>
+            <span class="section-label">The Portfolio</span>
+            <h2 class="section-title">Explore Every Venue</h2>
+            <p class="section-subtitle">Click any venue to launch its 360 virtual tour.</p>
           </div>
-          <div style="max-width: 700px;">
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-              50 Eggs Hospitality is a Miami-based restaurant group behind acclaimed brands including Yardbird Southern Table & Bar, Chicago Cut Steakhouse, Spring Chicken, and Chica. With locations spanning Miami, Las Vegas, Chicago, Dallas, and beyond, they're known for elevated dining experiences that blend culinary excellence with vibrant atmosphere.
-            </p>
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-              Liquid Pixel works with 50 Eggs as a trusted virtual tour partner, creating immersive digital experiences for their private dining and event spaces.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      <!-- The Challenge -->
-      <section>
-        <div class="container">
-          <div class="case-studies-grid">
-            <div>
-              <div class="section-header">
-                <span class="section-label">The Challenge</span>
-                <h2 class="section-title">Private Dining Rooms Nobody Could See</h2>
-              </div>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-                Private dining spaces at Chicago Cut and Yardbird were consistently under-booked. The physical separation from the main restaurant floor made these premium spaces difficult to showcase through traditional marketing materials.
-              </p>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-                PDF brochures and static photo galleries couldn't convey the ambiance, scale, or exclusivity of the private rooms. Event planners and corporate clients needed to physically visit before committing -- a friction point that killed conversion rates.
-              </p>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-                50 Eggs needed a way to bring the private dining experience directly to their prospects' screens.
-              </p>
-            </div>
-            <div>
-              <div class="section-header">
-                <span class="section-label">Our Solution</span>
-                <h2 class="section-title">Menus Meet Immersion</h2>
-              </div>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-                We delivered high-definition virtual tours of the private dining rooms at Chicago Cut and Yardbird, integrated directly into their event booking platform.
-              </p>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-                Each tour features embedded interactive menus that let planners browse prix fixe options while standing (virtually) inside the room. Custom hotspots detail seating configurations, A/V setup, and capacity for each space.
-              </p>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-                The result: prospects explore the space, browse the menu, and submit an inquiry -- all without leaving the page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div class="venue-grid">
 
-      <!-- Results -->
-      <section style="background: var(--bg-deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="container">
-          <div class="section-header text-center">
-            <span class="section-label">Results</span>
-            <h2 class="section-title">The Impact</h2>
-          </div>
-          <div class="case-studies-grid" style="max-width: 600px; margin: 0 auto;">
-            <div class="case-card" style="text-align: center;">
-              <div class="metric" style="margin-bottom: 1rem;">
-                <span class="metric-value" style="font-size: 3rem;">2.5x</span>
-                <span class="metric-label" style="font-size: 0.9rem;">Time on Page</span>
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/ChicaLV/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/50eggs_venues/50eggs_chica.avif" alt="Chica Las Vegas" /></div>
+              <div class="venue-tile-label">
+                <p class="venue-tile-name">Chica</p>
+                <span class="venue-tile-meta">Las Vegas &middot; Latin Cuisine</span>
               </div>
-              <p class="case-text">Visitors exploring the virtual tour spent 2.5 times longer on private dining pages compared to the previous static gallery format.</p>
-            </div>
-            <div class="case-card" style="text-align: center;">
-              <div class="metric" style="margin-bottom: 1rem;">
-                <span class="metric-value" style="font-size: 3rem;">+18%</span>
-                <span class="metric-label" style="font-size: 0.9rem;">Increase in Private Bookings</span>
-              </div>
-              <p class="case-text">Private dining inquiries and confirmed bookings increased by 18% within the first quarter of launching the virtual tour integration.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+            </a>
 
-      <!-- Venues -->
-      <section>
-        <div class="container">
-          <div class="section-header">
-            <span class="section-label">Venues</span>
-            <h2 class="section-title">Properties We've Toured</h2>
-          </div>
-          <div class="tour-grid" style="max-width: 800px;">
-            <article class="tour-card">
-              <div class="tour-card-image modern-gradient-2"></div>
-              <div class="tour-card-body">
-                <h3>Wakuda Las Vegas</h3>
-                <p>Flagship Japanese-Peruvian restaurant at The Venetian. Immersive 360 tour showcasing private dining spaces, omakase bar, and premium event areas.</p>
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/WAKUDALasVegas/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/50eggs_venues/50eggs_wakuda.avif" alt="Wakuda Las Vegas" /></div>
+              <div class="venue-tile-label">
+                <p class="venue-tile-name">Wakuda</p>
+                <span class="venue-tile-meta">Las Vegas &middot; Japanese</span>
               </div>
-            </article>
-            <article class="tour-card">
-              <div class="tour-card-image modern-gradient-3"></div>
-              <div class="tour-card-body">
-                <h3>Yardbird Southern Table & Bar</h3>
-                <p>Award-winning Southern cuisine with private event spaces. Full restaurant walkthrough with interactive reservation hotspots and menu overlays.</p>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/YardbirdLV/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/50eggs_venues/50eggs_yardbird.avif" alt="Yardbird Southern Table & Bar Las Vegas" /></div>
+              <div class="venue-tile-label">
+                <p class="venue-tile-name">Yardbird Southern Table &amp; Bar</p>
+                <span class="venue-tile-meta">Las Vegas &middot; Southern</span>
               </div>
-            </article>
+            </a>
+
           </div>
         </div>
       </section>
 
       <!-- CTA -->
-      <section style="background: var(--bg-deep); border-top: 1px solid var(--border);">
+      <section>
         <div class="container">
           <div class="about-content text-center">
             <h2 class="section-title">Want Results Like These?</h2>
             <p class="section-subtitle" style="margin: 0 auto 2rem;">Let's talk about how a virtual tour can transform your restaurant's private dining bookings.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-              <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;" class="btn btn-primary lg">
+              <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;" class="btn btn-primary lg">
                 Book a Free Strategy Call
               </a>
               <a href="virtualtours.html" class="btn btn-secondary lg">See More Tours</a>

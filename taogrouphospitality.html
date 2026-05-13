@@ -3,24 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>TAO Group Hospitality | Liquid Pixel</title>
+    <title>TAO Group Hospitality Virtual Tours | Liquid Pixel</title>
 
-    <meta name="title" content="TAO Group Hospitality | Liquid Pixel" />
-    <meta name="description" content="See how Liquid Pixel created immersive 360-degree virtual tours for TAO Group Hospitality venues including Marquee New York, driving a 32% increase in event inquiries." />
-    <meta name="author" content="Liquid Pixel" />
+    <meta name="title" content="TAO Group Hospitality Virtual Tours | Liquid Pixel" />
+    <meta name="description" content="Explore 28 immersive 360-degree virtual tours built for TAO Group Hospitality venues across New York, Las Vegas, and Chicago — from Beauty &amp; Essex to Hakkasan and beyond." />
     <link rel="canonical" href="https://www.liquidpixelagency.com/taogrouphospitality" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWXNT20QLC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KWXNT20QLC');
+    </script>
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.liquidpixelagency.com/taogrouphospitality" />
-    <meta property="og:title" content="TAO Group Hospitality | Liquid Pixel" />
-    <meta property="og:description" content="Interactive 360 virtual tours for TAO Group Hospitality venues. +32% event inquiries, -40% site visit reliance." />
-    <meta property="og:image" content="https://www.liquidpixelagency.com/assets/logos/og-image.png" />
+    <meta property="og:title" content="TAO Group Hospitality Virtual Tours | Liquid Pixel" />
+    <meta property="og:description" content="28 immersive 360-degree virtual tours for TAO Group venues across New York, Las Vegas, and Chicago." />
+    <meta property="og:image" content="https://www.liquidpixelagency.com/assets/logos/clients/tao.avif" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .venue-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+      @media (min-width: 640px) { .venue-grid { grid-template-columns: repeat(3, 1fr); } }
+      @media (min-width: 900px) { .venue-grid { grid-template-columns: repeat(4, 1fr); } }
+      @media (min-width: 1280px) { .venue-grid { grid-template-columns: repeat(5, 1fr); } }
+
+      .venue-tile {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s var(--ease);
+      }
+      .venue-tile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 180, 216, 0.4);
+      }
+      .venue-tile-logo {
+        aspect-ratio: 1 / 1;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.25rem;
+      }
+      .venue-tile-logo img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+      }
+      .venue-tile-label {
+        padding: 0.85rem 1rem;
+        text-align: center;
+        border-top: 1px solid var(--border);
+      }
+      .venue-tile-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin: 0 0 0.15rem 0;
+        line-height: 1.25;
+      }
+      .venue-tile-meta {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-light-muted);
+        font-weight: 600;
+      }
+      .venue-tile--unlinked {
+        cursor: default;
+        opacity: 0.85;
+      }
+      .venue-tile--unlinked:hover {
+        transform: none;
+        border-color: var(--border);
+        box-shadow: none;
+      }
+      .venue-tile--unlinked .venue-tile-meta {
+        color: var(--cyan);
+      }
+    </style>
 
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -31,15 +110,16 @@
     <nav class="navbar scrolled">
       <div class="container nav-content">
         <a href="index.html">
-          <img src="assets/logos/brand/liquidpixel.jpeg" alt="Liquid Pixel" style="height: 80px; display: block; border-radius: 8px;" />
+          <img src="assets/logos/brand/liquidpixel.png" alt="Liquid Pixel" style="height: 100px; display: block;" />
         </a>
         <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
         <ul class="nav-links" style="margin-bottom: 0">
           <li><a href="index.html#services">Services</a></li>
+          <li><a href="virtualtours.html">Virtual Tours</a></li>
           <li><a href="index.html#case-studies">Work</a></li>
           <li><a href="index.html#pricing">Pricing</a></li>
           <li>
-            <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;">
+            <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
               Book A Call
             </a>
           </li>
@@ -51,89 +131,170 @@
       <header class="hero hero-subpage" id="home">
         <div class="container hero-content" style="max-width: 900px;">
           <a href="virtualtours.html" class="back-link">&larr; Back to Virtual Tours</a>
-          <div class="hero-label">Case Study</div>
-          <h1 class="main-title slide-up">TAO Group Hospitality</h1>
-          <p class="hero-desc fade-in-delay" style="max-width: 700px;">
-            How we helped one of the world's largest hospitality groups increase event inquiries by 32% and reduce site visit reliance by 40% with interactive 360-degree virtual tours.
+          <div class="hero-label">TAO Group Hospitality</div>
+          <h1 class="main-title slide-up">28 Venues. One Portfolio.</h1>
+          <p class="hero-desc fade-in-delay">
+            We've built immersive 360-degree virtual tours for the entire TAO Group Hospitality portfolio across New York, Las Vegas, and Chicago. From Beauty &amp; Essex to Hakkasan, Wet Republic to Cathédrale — every venue is hotspotted for VIP table layouts, A/V capabilities, capacity, and reservations.
           </p>
         </div>
       </header>
 
-      <!-- Client Overview -->
+      <!-- Venue Grid -->
       <section style="background: var(--bg-deep); border-top: 1px solid var(--border);">
         <div class="container">
           <div class="section-header">
-            <span class="section-label">The Client</span>
-            <h2 class="section-title">About TAO Group Hospitality</h2>
+            <span class="section-label">The Portfolio</span>
+            <h2 class="section-title">Explore Every Venue</h2>
+            <p class="section-subtitle">Click any venue to launch its 360 virtual tour.</p>
           </div>
-          <div style="max-width: 700px;">
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-              TAO Group Hospitality is one of the largest restaurant and nightlife groups in the world, operating iconic venues across New York City, Las Vegas, Los Angeles, Chicago, and Sydney. Their portfolio includes Marquee, LAVO, Beauty & Essex, and TAO restaurants.
-            </p>
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-              Liquid Pixel holds preferred vendor status with TAO Group, delivering virtual tour experiences across their flagship properties.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      <!-- The Challenge -->
-      <section>
-        <div class="container">
-          <div class="case-studies-grid">
-            <div>
-              <div class="section-header">
-                <span class="section-label">The Challenge</span>
-                <h2 class="section-title">Selling a Multi-Level Experience Through a Screen</h2>
-              </div>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-                Out-of-state corporate event planners struggled to understand the multi-level scale and VIP configurations of Marquee NYC through standard photos alone.
-              </p>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-                PDF floor plans and static galleries failed to communicate the energy, scale, and spatial layout that makes Marquee a premier event destination. Corporate planners were requiring costly in-person site visits before committing to bookings.
-              </p>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-                TAO Group needed a digital solution that could close deals remotely -- especially for out-of-state and international clients.
-              </p>
-            </div>
-            <div>
-              <div class="section-header">
-                <span class="section-label">Our Solution</span>
-                <h2 class="section-title">A Fully Interactive Virtual Walkthrough</h2>
-              </div>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
-                We built a fully interactive 360-degree virtual walkthrough of Marquee New York with 45 custom hotspots detailing A/V capabilities, capacity limits, VIP table layouts, and bottle service configurations.
-              </p>
-              <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-                Event planners can now walk the entire venue from their laptop -- floor by floor, section by section -- clicking into detailed overlays for capacity, pricing tiers, and technical specifications. The tour is embedded directly into TAO Group's event inquiry workflow.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div class="venue-grid">
 
-      <!-- Results -->
-      <section style="background: var(--bg-deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="container">
-          <div class="section-header text-center">
-            <span class="section-label">Results</span>
-            <h2 class="section-title">The Impact</h2>
-          </div>
-          <div class="case-studies-grid" style="max-width: 600px; margin: 0 auto;">
-            <div class="case-card" style="text-align: center;">
-              <div class="metric" style="margin-bottom: 1rem;">
-                <span class="metric-value" style="font-size: 3rem;">+32%</span>
-                <span class="metric-label" style="font-size: 0.9rem;">Increase in Event Inquiries</span>
-              </div>
-              <p class="case-text">Corporate event planners who explored the virtual tour were significantly more likely to submit inquiry forms compared to those viewing static galleries.</p>
-            </div>
-            <div class="case-card" style="text-align: center;">
-              <div class="metric" style="margin-bottom: 1rem;">
-                <span class="metric-value" style="font-size: 3rem;">-40%</span>
-                <span class="metric-label" style="font-size: 0.9rem;">Reduction in Site Visit Reliance</span>
-              </div>
-              <p class="case-text">Out-of-state planners began booking without requiring in-person walkthroughs, saving time and overhead for the TAO Group events team.</p>
-            </div>
+            <a class="venue-tile" href="https://taogroup.com/venues/beauty-essex-new-york/virtual-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_beauty&essex.avif" alt="Beauty &amp; Essex New York" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Beauty &amp; Essex New York</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/BGGlasvegas/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_beauty&essex.avif" alt="Beauty &amp; Essex Las Vegas" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Beauty &amp; Essex Las Vegas</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/tao-uptown-new-york/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_uptown.avif" alt="TAO Uptown New York" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">TAO Uptown New York</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/TAODowntown/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_downtown.avif" alt="TAO Downtown New York" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">TAO Downtown New York</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/TAODowntownNightclub/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_downtownnightclub.avif" alt="TAO Downtown Nightclub New York" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">TAO Downtown Nightclub New York</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/tao-asian-bistro-chicago/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_chicago_restaurant.avif" alt="TAO Chicago Restaurant" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">TAO Chicago Restaurant</p><span class="venue-tile-meta">Chicago</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/tao-nightclub-chicago/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_chicago_nightclub.avif" alt="TAO Chicago Nightclub" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">TAO Chicago Nightclub</p><span class="venue-tile-meta">Chicago</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/tao-beach-dayclub-las-vegas/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_beachdayclub.avif" alt="TAO Beach Dayclub" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">TAO Beach Dayclub</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/wet-republic-ultra-pool-las-vegas/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_wetrepublic.avif" alt="Wet Republic" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Wet Republic Ultra Pool</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/LiquidPoolLounge/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_liquid.avif" alt="Liquid Pool Lounge" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Liquid Pool Lounge</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/hakkasan-las-vegas/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_hakkasan.avif" alt="Hakkasan" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Hakkasan</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/cathedrale-las-vegas/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_cathedralLV.avif" alt="Cathédrale Las Vegas" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Cathédrale Las Vegas</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/cathedrale-new-york/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_cathedralNY.avif" alt="Cathédrale New York" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Cathédrale New York</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/casa-calavera-las-vegas/360-tour-casa-calavera-las-vegas/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_lacalavera.avif" alt="Casa Calavera" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Casa Calavera</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/lavo-italian-restaurant-new-york/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_lavoNY.avif" alt="LAVO" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">LAVO</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/MagicHourNYC/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_magichour.avif" alt="Magic Hour" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Magic Hour</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/HighlightRoomNYC/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_highlight.avif" alt="The Highlight Room" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">The Highlight Room</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/phd-lounge-new-york/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_phdpenthouse.avif" alt="PHD Lounge" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">PHD Lounge</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/phd-terrace-new-york/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_phd.avif" alt="PHD Terrace" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">PHD Terrace</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/the-rickey-cocktail-lounge-new-york/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_thericky.avif" alt="The Rickey" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">The Rickey</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/fishbowl-new-york/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_fishbowl.avif" alt="Fishbowl" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Fishbowl</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://taogroup.com/venues/stanton-social-prime/360-tour/" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_stanton.avif" alt="Stanton Social Prime" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Stanton Social Prime</p><span class="venue-tile-meta">Las Vegas</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/SakeNoHana/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_sakenohana.avif" alt="Sake No Hana" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Sake No Hana</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/SilverLiningLounge/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_silverlining.avif" alt="Silver Lining Lounge" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Silver Lining Lounge</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/LoosiesNightclub/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_loosies.avif" alt="Loosie's Nightclub" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Loosie's Nightclub</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile" href="https://thedigitaluproar.s3.us-east-2.amazonaws.com/TheFixMoxyLES/index.htm" target="_blank" rel="noopener">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_thefix.avif" alt="The Fix at Moxy LES" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">The Fix at Moxy LES</p><span class="venue-tile-meta">New York</span></div>
+            </a>
+
+            <a class="venue-tile venue-tile--unlinked" href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_fleur.avif" alt="Fleur" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Fleur</p><span class="venue-tile-meta">Inquire for Tour</span></div>
+            </a>
+
+            <a class="venue-tile venue-tile--unlinked" href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_littlesister.avif" alt="Little Sister Lounge" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Little Sister Lounge</p><span class="venue-tile-meta">Inquire for Tour</span></div>
+            </a>
+
+            <a class="venue-tile venue-tile--unlinked" href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
+              <div class="venue-tile-logo"><img src="assets/logos/tao_venues/tao_theready.avif" alt="The Ready Rooftop" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">The Ready Rooftop</p><span class="venue-tile-meta">Inquire for Tour</span></div>
+            </a>
+
           </div>
         </div>
       </section>
@@ -142,14 +303,11 @@
       <section>
         <div class="container">
           <div class="about-content text-center">
-            <h2 class="section-title">Want Results Like These?</h2>
-            <p class="section-subtitle" style="margin: 0 auto 2rem;">Let's talk about how a virtual tour can transform your venue's booking pipeline.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-              <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/thedigitaluproar'}); return false;" class="btn btn-primary lg">
-                Book a Free Strategy Call
-              </a>
-              <a href="virtualtours.html" class="btn btn-secondary lg">See More Tours</a>
-            </div>
+            <h2 class="section-title">Want a Portfolio Like This?</h2>
+            <p class="section-subtitle" style="margin: 0 auto 2rem;">Whether you operate one venue or twenty-eight, we build immersive 360 tours that scale with your brand. Let's talk.</p>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;" class="btn btn-primary lg">
+              Book a Free Strategy Call
+            </a>
           </div>
         </div>
       </section>
