@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Ruby Red Hospitality Virtual Tours | Liquid Pixel</title>
+
+    <meta name="title" content="Ruby Red Hospitality Virtual Tours | Liquid Pixel" />
+    <meta name="description" content="Immersive 360-degree virtual tours for the Ruby Red Hospitality hotel portfolio — built to showcase rooms, event spaces, and amenities and drive direct bookings." />
+    <link rel="canonical" href="https://www.liquidpixelagency.com/rubyred" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWXNT20QLC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KWXNT20QLC');
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.liquidpixelagency.com/rubyred" />
+    <meta property="og:title" content="Ruby Red Hospitality Virtual Tours | Liquid Pixel" />
+    <meta property="og:description" content="360-degree virtual tours for the Ruby Red Hospitality hotel portfolio." />
+    <meta property="og:image" content="https://www.liquidpixelagency.com/assets/logos/clients/rubyred.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      .venue-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      @media (min-width: 640px) { .venue-grid { grid-template-columns: repeat(2, 1fr); } }
+
+      .venue-tile {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s var(--ease);
+      }
+      .venue-tile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 180, 216, 0.4);
+      }
+      .venue-tile-logo {
+        aspect-ratio: 16 / 9;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .venue-tile-logo img {
+        max-width: 70%;
+        max-height: 80%;
+        object-fit: contain;
+      }
+      .venue-tile-label {
+        padding: 1.1rem 1.25rem;
+        text-align: center;
+        border-top: 1px solid var(--border);
+      }
+      .venue-tile-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 0.25rem 0;
+        line-height: 1.25;
+      }
+      .venue-tile-meta {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-light-muted);
+        font-weight: 600;
+      }
+      .venue-tile--unlinked {
+        cursor: default;
+        opacity: 0.9;
+      }
+      .venue-tile--unlinked:hover {
+        transform: none;
+        border-color: var(--border);
+        box-shadow: none;
+      }
+      .venue-tile--unlinked .venue-tile-meta {
+        color: var(--cyan);
+      }
+    </style>
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+      <div class="container nav-content">
+        <a href="index.html">
+          <img src="assets/logos/brand/liquidpixel.png" alt="Liquid Pixel" style="height: 100px; display: block;" />
+        </a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <ul class="nav-links" style="margin-bottom: 0">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="virtualtours.html">Virtual Tours</a></li>
+          <li><a href="index.html#case-studies">Work</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li>
+            <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
+              Book A Call
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <header class="hero hero-subpage" id="home">
+        <div class="container hero-content" style="max-width: 900px;">
+          <a href="virtualtours.html" class="back-link">&larr; Back to Virtual Tours</a>
+          <div class="hero-label">Ruby Red Hospitality</div>
+          <h1 class="main-title slide-up">A Portfolio in Motion.</h1>
+          <p class="hero-desc fade-in-delay">
+            We're building immersive 360-degree virtual tours across the Ruby Red Hospitality portfolio — every property hotspotted for rooms, event and meeting spaces, amenities, and direct bookings. The first tours are rolling out now, with more added as each property goes live.
+          </p>
+        </div>
+      </header>
+
+      <!-- Venue Grid -->
+      <section style="background: var(--bg-deep); border-top: 1px solid var(--border);">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">The Portfolio</span>
+            <h2 class="section-title">Tours Rolling Out</h2>
+            <p class="section-subtitle">The first properties are in production. Check back as new tours go live, or reach out to preview what's ready.</p>
+          </div>
+
+          <div class="venue-grid">
+
+            <!-- TODO: replace these placeholders with the 2 ready tours once URLs + property names are provided -->
+            <a class="venue-tile venue-tile--unlinked" href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
+              <div class="venue-tile-logo"><img src="assets/logos/clients/rubyred.jpg" alt="Ruby Red Hospitality" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Property One</p><span class="venue-tile-meta">Tour Coming Soon</span></div>
+            </a>
+
+            <a class="venue-tile venue-tile--unlinked" href="javascript:void(0);" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;">
+              <div class="venue-tile-logo"><img src="assets/logos/clients/rubyred.jpg" alt="Ruby Red Hospitality" /></div>
+              <div class="venue-tile-label"><p class="venue-tile-name">Property Two</p><span class="venue-tile-meta">Tour Coming Soon</span></div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="container">
+          <div class="about-content text-center">
+            <h2 class="section-title">Want to Preview a Tour?</h2>
+            <p class="section-subtitle" style="margin: 0 auto 2rem;">We'd love to walk you through what's ready and what's coming next across the Ruby Red portfolio.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+              <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/liquidpixeldigitalagency'}); return false;" class="btn btn-primary lg">
+                Book a Free Strategy Call
+              </a>
+              <a href="virtualtours.html" class="btn btn-secondary lg">See More Tours</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="contact" id="contact">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> Liquid Pixel. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
