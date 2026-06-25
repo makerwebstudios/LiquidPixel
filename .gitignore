@@ -11,3 +11,11 @@ audits/
 *.docx
 *.xlsx
 !assets/**/*.pdf
+
+# Internal MWS deliverables & working files — NEVER push to the public client site repo
+analytics/
+*Maker Mind Map*
+OPS-*-LPX-*
+MKT-*-LPX-*
+SAL-*-LPX-*
+*Questionnaire*
