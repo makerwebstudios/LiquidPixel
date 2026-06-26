@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://liquidpixel.io/</loc><lastmod>2026-04-01</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://liquidpixel.io/virtual-tours-hospitality.html</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://liquidpixel.io/virtual-tours-real-estate.html</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://liquidpixel.io/virtual-tours-retail.html</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://liquidpixel.io/virtual-tours-corporate.html</loc><lastmod>2026-04-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://liquidpixel.io/</loc><lastmod>2026-06-26</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://liquidpixel.io/virtualtours</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://liquidpixel.io/virtual-tours-corporate</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://liquidpixel.io/virtual-tours-hospitality</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://liquidpixel.io/virtual-tours-real-estate</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://liquidpixel.io/virtual-tours-retail</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://liquidpixel.io/rubyred</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://liquidpixel.io/50eggshospitality</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://liquidpixel.io/taogrouphospitality</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
