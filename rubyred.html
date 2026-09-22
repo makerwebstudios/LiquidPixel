@@ -105,7 +105,129 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
       <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://calendly.com https://*.calendly.com https://player.vimeo.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://calendly.com https://*.calendly.com; base-uri 'self'; form-action 'self' https://calendly.com; object-src 'none'" />
-  </head>
+    <!-- Structured data added 2026-09-22 (OPS-LT06: every page carries schema).
+       CollectionPage + ItemList generated FROM THIS PAGE'S OWN MARKUP, so it cannot
+       drift from what is actually listed. NOT VideoObject: these are 360 walkthroughs
+       hosted on S3, not video, and false markup is worse than none. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://liquidpixel.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Virtual Tours",
+          "item": "https://liquidpixel.io/virtualtours"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ruby Red Hospitality Virtual Tours",
+          "item": "https://liquidpixel.io/rubyred"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://liquidpixel.io/rubyred",
+      "name": "Ruby Red Hospitality Virtual Tours",
+      "url": "https://liquidpixel.io/rubyred",
+      "description": "Immersive 360-degree virtual tours for the Ruby Red Hospitality hotel portfolio — built to showcase rooms, event spaces, and amenities and drive direct bookings.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Liquid Pixel",
+        "url": "https://liquidpixel.io/"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Liquid Pixel",
+        "url": "https://liquidpixel.io/"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 5,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Hilton Garden Inn — South Padre Island Beachfront",
+              "url": "https://thedigitaluproar.s3.us-east-2.amazonaws.com/HiltonGardenInnSouthPadreIslandBeachfront/index.htm",
+              "creator": {
+                "@type": "Organization",
+                "name": "Liquid Pixel"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Homewood Suites — McAllen",
+              "url": "https://thedigitaluproar.s3.us-east-2.amazonaws.com/HomewoodSuitesMcAllen/index.htm",
+              "creator": {
+                "@type": "Organization",
+                "name": "Liquid Pixel"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Courtyard by Marriott — South Padre Island",
+              "url": "https://thedigitaluproar.s3.us-east-2.amazonaws.com/CourtyardByMarriottSPI/index.htm",
+              "creator": {
+                "@type": "Organization",
+                "name": "Liquid Pixel"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Embassy Suites — McAllen Convention Center",
+              "url": "https://thedigitaluproar.s3.us-east-2.amazonaws.com/EmbassySuitesMcAllenConventionCenter/index.htm",
+              "creator": {
+                "@type": "Organization",
+                "name": "Liquid Pixel"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Aloft — McAllen",
+              "url": "https://thedigitaluproar.s3.us-east-2.amazonaws.com/AloftMcAllen/index.htm",
+              "creator": {
+                "@type": "Organization",
+                "name": "Liquid Pixel"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+  </script>
+</head>
   <body>
 
     <!-- Navigation -->
