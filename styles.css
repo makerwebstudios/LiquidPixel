@@ -173,11 +173,28 @@ h1, h2, h3, h4 {
   transition: all 0.3s var(--ease);
 }
 
+/* 🔴 backdrop-filter must NOT sit on .navbar itself.
+   backdrop-filter (like transform/filter/perspective) makes the element a
+   CONTAINING BLOCK for position:fixed descendants — which trapped the
+   full-screen mobile menu (.nav-links, position:fixed; inset:0) inside the
+   116px bar. The menu opened but rendered as a squashed horizontal strip.
+   It broke on every subpage, and on the homepage the moment a visitor
+   scrolled far enough for .scrolled to be applied.
+   Fix: paint the blur on a pseudo-element, which has no fixed descendants. */
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
+  background: transparent;
   border-bottom: 1px solid var(--border);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.navbar.scrolled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .nav-content {
@@ -1284,3 +1301,155 @@ section {
   width: 100%;
   height: 100%;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   CONTACT FORM  (2026-09-28) — #get-started
+   ══════════════════════════════════════════════════════════════════════════ */
+.lp-form {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* minmax(0,…) not 1fr: a bare 1fr resolves to minmax(auto,1fr), which honours
+   an input's intrinsic min-width and blows the grid past its container. */
+.lp-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.lp-field { display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+
+.lp-field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.lp-req { color: var(--secondary); }
+
+.lp-form input,
+.lp-form select,
+.lp-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.lp-form textarea { resize: vertical; min-height: 120px; }
+
+.lp-form select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%231a1a2e' stroke-width='1.6' d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+  padding-right: 2.6rem;
+}
+
+.lp-form input:focus,
+.lp-form select:focus,
+.lp-form textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.16);
+}
+
+.lp-form input:user-invalid,
+.lp-form select:user-invalid { border-color: #d64550; }
+
+/* Honeypot. Kept off-screen rather than display:none so bots that skip hidden
+   fields still fill it. Never use visibility/hidden here. */
+.lp-hp {
+  position: absolute !important;
+  left: -9999px;
+  /* !important because .lp-form input{width:100%} outranks this selector and
+     was stretching the honeypot to the full container width. */
+  width: 1px !important;
+  height: 1px;
+  opacity: 0;
+}
+
+.lp-submit {
+  justify-self: start;
+  min-width: 200px;
+  /* The shared .btn renders 41px here — under the 44px tap-target minimum,
+     on the one button that matters most. */
+  min-height: 48px;
+}
+.lp-submit[disabled] { opacity: 0.6; cursor: progress; }
+
+.lp-result {
+  display: none;
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.lp-result.is-shown { display: block; }
+.lp-result.is-ok {
+  background: rgba(0, 180, 216, 0.09);
+  border: 1px solid rgba(0, 180, 216, 0.35);
+  color: var(--text);
+}
+.lp-result.is-err {
+  background: rgba(214, 69, 80, 0.07);
+  border: 1px solid rgba(214, 69, 80, 0.38);
+  color: var(--text);
+}
+.lp-result a { color: var(--primary); font-weight: 600; }
+
+.lp-alt {
+  margin: 1.75rem auto 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.8;
+}
+.lp-alt a { color: var(--primary); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .lp-row { grid-template-columns: minmax(0, 1fr); }
+  .lp-submit { justify-self: stretch; width: 100%; }
+}
+
+/* Contact page — the three standing facts under the form. */
+.lp-facts {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.lp-facts div { display: flex; flex-direction: column; gap: 0.35rem; text-align: center; }
+.lp-facts strong {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+}
+.lp-facts span { font-size: 0.925rem; line-height: 1.55; opacity: 0.85; }
+
+@media (max-width: 640px) {
+  .lp-facts { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+}
+
+/* Contact page: the form section is the FIRST element on the page, and the
+   fixed navbar is 117px tall while section padding is only 6rem (96px) — the
+   "CONTACT" label rendered 15px UNDER the bar at every width. Measured, not
+   guessed. Scoped to this page so the homepage, where the same section sits
+   far down the page, is unaffected. */
+body.page-contact main > section:first-child { padding-top: 9.5rem; }

@@ -134,7 +134,7 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
       <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://calendly.com https://*.calendly.com https://player.vimeo.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://calendly.com https://*.calendly.com; base-uri 'self'; form-action 'self' https://calendly.com; object-src 'none'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://calendly.com https://*.calendly.com https://player.vimeo.com; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://calendly.com https://*.calendly.com; base-uri 'self'; form-action 'self' https://api.web3forms.com https://calendly.com; object-src 'none'" />
   </head>
   <body>
 
@@ -150,6 +150,7 @@
           <li><a href="virtualtours.html">Virtual Tours</a></li>
           <li><a href="#case-studies">Work</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li>
             <a href="#" class="btn btn-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rccepeda'}); return false;">
               Book A Call
@@ -171,10 +172,10 @@
             Specializing in Virtual Tours, Augmented Reality, Custom Digital Business Cards, and Content Creation.
           </p>
           <div class="hero-ctas fade-in-delay">
-            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rccepeda'}); return false;" class="btn btn-primary lg">
+            <a href="#get-started" class="btn btn-primary lg">Get a Quote</a>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rccepeda'}); return false;" class="btn btn-secondary lg">
               Book a Free Strategy Call
             </a>
-            <a href="#tours" class="btn btn-secondary lg">See Our Work</a>
           </div>
           <div class="hero-video fade-in-delay">
             <div class="video-wrapper">
@@ -590,7 +591,90 @@
           </div>
         </div>
       </section>
-    </main>
+  
+  <!-- ══════════════════════════════════════════════════════════════════════
+       CONTACT FORM  (added 2026-09-28)
+       Web3Forms, not a Pages Function: liquidpixel.io is GitHub Pages, which
+       has no serverless runtime. GW's and Post Oak use functions/ because they
+       are on Cloudflare; that route does not exist here.
+       ══════════════════════════════════════════════════════════════════════ -->
+  <section id="get-started" style="border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Tell Us About the Space</h2>
+        <p class="lead">
+          A few details and we will come back with what a tour of your property would
+          involve &mdash; scope, timeline and cost. No obligation.
+        </p>
+      </div>
+
+      <form class="lp-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <!-- 🔴 REPLACE: create the key at web3forms.com under hello@makerwebstudios.com
+             and set the RECIPIENT to rc@liquidpixel.io. The key is public and safe in
+             HTML. Nothing is delivered until that recipient address is VERIFIED. -->
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="New enquiry — liquidpixel.io" />
+        <input type="hidden" name="from_name" value="Liquid Pixel Website" />
+        <input type="hidden" name="Page" value="Homepage" />
+        <!-- honeypot: real people never fill this; bots do -->
+        <input type="checkbox" name="botcheck" class="lp-hp" tabindex="-1" autocomplete="off" />
+
+        <div class="lp-row">
+          <div class="lp-field">
+            <label for="lpName">Name <span class="lp-req">*</span></label>
+            <input id="lpName" name="Name" type="text" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="lp-field">
+            <label for="lpCompany">Company / Property</label>
+            <input id="lpCompany" name="Company" type="text" autocomplete="organization" placeholder="Where you work" />
+          </div>
+        </div>
+
+        <div class="lp-row">
+          <div class="lp-field">
+            <label for="lpEmail">Email <span class="lp-req">*</span></label>
+            <input id="lpEmail" name="Email" type="email" required autocomplete="email" placeholder="you@company.com" />
+          </div>
+          <div class="lp-field">
+            <label for="lpPhone">Phone</label>
+            <input id="lpPhone" name="Phone" type="tel" inputmode="tel" maxlength="12"
+                   autocomplete="tel" placeholder="956-000-0000" />
+          </div>
+        </div>
+
+        <div class="lp-field">
+          <label for="lpType">What do you need? <span class="lp-req">*</span></label>
+          <select id="lpType" name="Interest" required>
+            <option value="" disabled selected>Select one&hellip;</option>
+            <option>360&deg; Virtual Tour</option>
+            <option>Photography / Video</option>
+            <option>Website</option>
+            <option>Google Business Profile</option>
+            <option>Not sure yet &mdash; let&rsquo;s talk</option>
+          </select>
+        </div>
+
+        <div class="lp-field">
+          <label for="lpMsg">Anything else?</label>
+          <textarea id="lpMsg" name="Message" rows="4"
+                    placeholder="Square footage, number of rooms, timeline, budget range&hellip;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary lp-submit" id="lpSubmit">Send Enquiry</button>
+
+        <!-- Populated by JS. A form that fails silently is worse than no form. -->
+        <div class="lp-result" id="lpResult" role="status" aria-live="polite"></div>
+      </form>
+
+      <p class="lp-alt">
+        Prefer to talk? <a href="tel:+19568029541" data-lp-call>(956) 802-9541</a>
+        &nbsp;&middot;&nbsp; <a href="mailto:rc@liquidpixel.io">rc@liquidpixel.io</a>
+      </p>
+    </div>
+  </section>
+
+  </main>
 
     <!-- Footer -->
     <footer class="contact" id="contact">
@@ -599,7 +683,8 @@
           <h2>Ready to See It in Action?</h2>
           <p>Get in touch today to learn more about how we can help your brand.</p>
           <div class="contact-links">
-            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rccepeda'}); return false;" class="btn btn-primary lg">
+            <a href="#get-started" class="btn btn-primary lg">Get a Quote</a>
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rccepeda'}); return false;" class="btn btn-outline lg">
               Book A Call
             </a>
             <a href="mailto:rc@liquidpixel.io" class="btn btn-outline lg">Email Us</a>
