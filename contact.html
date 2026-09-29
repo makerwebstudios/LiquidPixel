@@ -122,10 +122,11 @@
           </div>
 
           <form class="lp-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
-        <!-- 🔴 REPLACE: create the key at web3forms.com under hello@makerwebstudios.com
-             and set the RECIPIENT to rc@liquidpixel.io. The key is public and safe in
-             HTML. Nothing is delivered until that recipient address is VERIFIED. -->
-        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY" />
+        <!-- Web3Forms access key. Public by design — it is not a secret, it only
+             routes to the recipient registered against it in the Web3Forms dashboard
+             (there is no recipient field in this HTML, which is what stops the form
+             being used as an open relay). Set live 2026-09-29. -->
+        <input type="hidden" name="access_key" value="ce575d14-dd15-47dd-b634-800f32565684" />
         <input type="hidden" name="subject" value="New enquiry — liquidpixel.io (Contact page)" />
         <input type="hidden" name="from_name" value="Liquid Pixel Website" />
         <input type="hidden" name="Page" value="Contact page" />
