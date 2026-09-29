@@ -1366,8 +1366,11 @@ section {
   box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.16);
 }
 
-.lp-form input:user-invalid,
-.lp-form select:user-invalid { border-color: #d64550; }
+/* :not(.is-sent) — after a successful send the fields are cleared, which makes
+   the required ones invalid again; without this guard all three turn red on
+   success and the form reads as an error. */
+.lp-form:not(.is-sent) input:user-invalid,
+.lp-form:not(.is-sent) select:user-invalid { border-color: #d64550; }
 
 /* Honeypot. Kept off-screen rather than display:none so bots that skip hidden
    fields still fill it. Never use visibility/hidden here. */

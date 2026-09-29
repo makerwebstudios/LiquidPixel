@@ -126,6 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
     out.innerHTML = html;
   }
 
+  // Once they start typing again it is a new enquiry — restore live validation.
+  form.addEventListener('input',  function () { form.classList.remove('is-sent'); });
+  form.addEventListener('change', function () { form.classList.remove('is-sent'); });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -155,8 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         show('ok', '<strong>Thank you — we have it.</strong><br>' +
                    'RC will get back to you within one business day. If it is urgent, ' + FALLBACK);
-        form.querySelectorAll('input:not([type="hidden"]), select, textarea')
-            .forEach(function (f) { if (f.type === 'checkbox') { f.checked = false; } else { f.value = ''; } });
+        // form.reset() — NOT a manual loop setting .value = ''. Clearing a required
+        // field by hand leaves the element "user-interacted", so it immediately
+        // matches :user-invalid and the three required fields turn red on a
+        // SUCCESSFUL send. reset() clears that flag; is-sent is the belt-and-braces.
+        form.reset();
+        form.classList.add('is-sent');
 
         if (typeof gtag === 'function') {
           gtag('event', 'generate_lead',   { form_id: 'contactForm' });
