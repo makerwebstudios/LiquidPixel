@@ -1456,3 +1456,10 @@ section {
    guessed. Scoped to this page so the homepage, where the same section sits
    far down the page, is unaffected. */
 body.page-contact main > section:first-child { padding-top: 9.5rem; }
+
+/* Footer social icons (2026-10-18) — inline SVG circles, brand fill on hover (MWS footer standard) */
+.footer-social { display: flex; gap: 12px; align-items: center; justify-content: center; flex-basis: 100%; order: 10; margin-top: 6px; }
+.footer-social a { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid currentColor; color: inherit; opacity: .85; transition: background .2s, border-color .2s, transform .2s, opacity .2s; }
+.footer-social a:hover, .footer-social a:focus-visible { background: var(--primary); border-color: var(--primary); color: #fff; opacity: 1; transform: translateY(-2px); outline: none; }
+.footer-social svg { width: 18px; height: 18px; fill: currentColor; }
