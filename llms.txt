@@ -1,6 +1,6 @@
 # Liquid Pixel
 
-> Liquid Pixel is a boutique digital agency in McAllen, Texas, specializing in immersive 360° virtual tours, video production, augmented reality experiences, 360 drone services, and TapGenie NFC digital business cards. We make Rio Grande Valley businesses impossible to ignore — turning a location into a sales tool customers can explore before they ever arrive.
+> Liquid Pixel is a boutique digital agency in McAllen, Texas, specializing in immersive 360° virtual tours, video production, augmented reality experiences, 360 drone services, and custom NFC digital business cards. We make Rio Grande Valley businesses impossible to ignore — turning a location into a sales tool customers can explore before they ever arrive.
 
 ## About
 - Business: Liquid Pixel Digital Agency
@@ -18,7 +18,7 @@
 - [Hospitality Virtual Tours](https://liquidpixel.io/virtual-tours-hospitality): 360° tours for hotels, restaurants, bars, and event venues.
 - [Real Estate Virtual Tours](https://liquidpixel.io/virtual-tours-real-estate): 360° tours for real estate agents, luxury homes, and property managers.
 - [Retail Virtual Tours](https://liquidpixel.io/virtual-tours-retail): 360° tours for retail stores, showrooms, and dealerships.
-- Custom Digital Business Cards (TapGenie): NFC-powered digital cards that share contact info, social links, and portfolios in one tap.
+- Custom Digital Business Cards: NFC-powered digital cards that share contact info, social links, and portfolios in one tap.
 - 360 Drone Services: Aerial and 360° drone capture for property, events, and venues.
 - Augmented Reality Experiences: Interactive AR that brings a brand, product, or venue to life on any phone.
 - Video Production & Content Creation: Scroll-stopping photo and video content for social and brand storytelling.
